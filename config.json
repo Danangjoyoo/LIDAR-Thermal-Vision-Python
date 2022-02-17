@@ -1,0 +1,173 @@
+{
+    "camera": {
+        "colorFrame": {
+            "availableSize": [
+                "1920x1080",
+                "1280x720",
+                "640x480"
+            ],
+            "w": 1920,
+            "h": 1080
+        },
+        "depthFrame": {
+            "availableSize": [
+                "1280x720",
+                "640x480"
+            ],
+            "w": 640,
+            "h": 480
+        },
+        "thermalFrame": {
+            "availableSize": [
+                "640x480",
+                "320x240"
+            ],
+            "w": 640,
+            "h": 480
+        }
+    },
+    "objectDetection": {
+        "confidenceThreshold": 0.3,
+        "network": "yolo",
+        "frameworkIndex": 0,
+        "framework": {
+            "yolo": [
+                {
+                    "availableInputSize": [
+                        512,
+                        416,
+                        320,
+                        224,
+                        128
+                    ],
+                    "inputSize": 416,
+                    "classfile": "./models/yolo/yolov4-tiny-1/object-dummy.json",
+                    "config": "./models/yolo/yolov4-tiny-1/facemask-yolov4-tiny.cfg",
+                    "model": "./models/yolo/yolov4-tiny-1/facemask-yolov4-tiny_best.weights"
+                },
+                {
+                    "availableInputSize": [
+                        512,
+                        416,
+                        320,
+                        224,
+                        128
+                    ],
+                    "inputSize": 416,
+                    "classfile": "./models/yolo/yolo-v3-1/object.json",
+                    "config": "./models/yolo/yolo-v3-1/face.cfg",
+                    "model": "./models/yolo/yolo-v3-1/yolov3-wider_16000.weights"
+                },
+                {
+                    "availableInputSize": [
+                        512,
+                        416,
+                        320,
+                        224,
+                        128
+                    ],
+                    "inputSize": 416,
+                    "classfile": "./models/yolo/yolo-v3-2/dummy-object.json",
+                    "config": "./models/yolo/yolo-v3-2/config.cfg",
+                    "model": "./models/yolo/yolo-v3-2/yolov3_mask_last.weights"
+                },
+                {
+                    "availableInputSize": [
+                        512,
+                        416,
+                        320,
+                        224,
+                        128
+                    ],
+                    "inputSize": 416,
+                    "classfile": "./models/yolo/yolov3-tiny-1/object.json",
+                    "config": "./models/yolo/yolov3-tiny-1/yolov3-tiny.cfg",
+                    "model": "./models/yolo/yolov3-tiny-1/face-yolov3-tiny_41000.weights"
+                }
+            ],
+            "caffe": [
+                {}
+            ],
+            "onnx": [
+                {}
+            ],
+            "tflite": [
+                {}
+            ]
+        }
+    },
+    "mediapipe": {
+        "maxObject": 10,
+        "detectionConfidence": 0.25,
+        "trackingConfidence": 0.3,
+        "boxScale": [
+            1.3,
+            1.8
+        ],
+        "centerOffset": [
+            0,
+            -30
+        ]
+    },
+    "objectTracking": {
+        "swapEntryExit": false,
+        "trackFactor": 1,
+        "registerThreshold": 25,
+        "deleteThreshold": 20,
+        "validDistanceCM": 0,
+        "useGlobalTemperatureUpdate": true,
+        "globalTemperatureResetCount": 35,
+        "temperatureResetCount": 75,
+        "temperatureScanArea": 20,
+        "updateTemperatureAttempt": 10
+    },
+    "logger": {
+        "name": "EVISION",
+        "enable": true,
+        "availableLevel": [
+            "NOTSET",
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+        ],
+        "showLevels": [
+            "DEBUG",
+            "INFO",
+            "ERROR"
+        ]
+    },
+    "flir": {
+        "refreshThresh": 30,
+        "maxTemp": 37,
+        "minTemp": 34,
+        "showFrameBoundary": false,
+        "frameSafetyFactor": {
+            "x": 0.0,
+            "y": 0.05
+        },
+        "distancePolynom": [
+            -6.78e-06,
+            0.00924,
+            -0.222
+        ],
+        "distancePolynomRange": [
+            30,
+            700
+        ],
+        "tempPolynom": [
+            0.00154,
+            0.873,
+            2.35
+        ],
+        "tempPolynomRange": [
+            29,
+            41
+        ]
+    },
+    "GUI": {
+        "entryLineX": 623,
+        "exitLineX": 1214
+    }
+}
